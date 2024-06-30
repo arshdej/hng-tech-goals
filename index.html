@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Tech Goals</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            background-color: #f4f4f9;
+            color: #333;
+        }
+        
+        header {
+            background-color: #4caf50;
+            color: white;
+            padding: 10px 4px;
+            width: 100%;
+            text-align: center;
+        }
+        
+        main {
+            padding: 20px;
+            text-align: center;
+        }
+        
+        img {
+            border-radius: 50%;
+            max-width: 100%;
+            height: auto;
+        }
+        
+        .links {
+            margin-top: 20px;
+        }
+        
+        .links a {
+            display: block;
+            margin: 10px 0;
+            color: #4caf50;
+            text-decoration: none;
+        }
+        
+        .links a:hover {
+            text-decoration: underline;
+        }
+        
+        ul.goals {
+            text-align: left;
+        }
+        
+        ul.goals li {
+            margin-bottom: 8px;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>My Tech Goals for the Next 2 Years</h1>
+    </header>
+    <main>
+        <p data-testid="slackDisplayName">Slack Name: Rasheed</p>
+        <p data-testid="currentTimeUTC">
+            Current Time (UTC): <span id="utc-time"></span>
+        </p>
+        <p data-testid="currentDay">
+            Current Day: <span id="current-day"></span>
+        </p>
+        <p data-testid="slackEmail">Slack Email: ar.sh.dej@gmail.com</p>
+        <img src="./imgs/slack-dp.jpeg" alt="Slack Profile Picture" data-testid="slackProfilePicture" width="200" height="200" />
+
+        <h2>Goals</h2>
+        <ul class="goals">
+            <li>Learn and master ReactJS and Redux.</li>
+            <li>Build a solid portfolio of mobile applications using Flutter.</li>
+            <li>Contribute to open-source projects.</li>
+            <li>Gain a deeper understanding of software architecture patterns.</li>
+            <li>Secure a full-time position as a software developer.</li>
+        </ul>
+
+        <div class="links">
+            <a href="https://hng.tech/learn" data-testid="hngLink">HNG Tech Learn</a
+        >
+        <a href="https://keyword.dog" data-testid="keywordLink">Keyword Dog</a>
+            <a href="https://scrapeanyweb.site" data-testid="scrapeanywebLink">Scrape Any Web</a
+        >
+      </div>
+    </main>
+
+    <script>
+      function updateTime() {
+        const now = new Date();
+        document.getElementById("utc-time").textContent = now
+          .toUTCString()
+          .slice(17, 25);
+        document.getElementById("current-day").textContent =
+          now.toLocaleDateString("en-US", { weekday: "long" });
+      }
+      updateTime();
+      // Update time every second
+      setInterval(updateTime, 1000);
+    </script>
+  </body>
+</html>
